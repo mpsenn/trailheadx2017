@@ -1,0 +1,15 @@
+<apex:page standardController="Contact">
+
+<!-- TODO copy Twitter example here -->
+<blockquote class="twitter-tweet">
+  <a class="twitter-timeline"
+      href="https://twitter.com/{! contact.Twitter_Handle__c}"
+      data-chrome="noheader,nofooter" data-tweet-limit="1"      
+      height="250">
+    Tweets by @{! contact.Twitter_Handle__c}
+  </a>
+</blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" html-charset="utf-8" />
+
+
+</apex:page>

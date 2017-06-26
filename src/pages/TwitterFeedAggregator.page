@@ -1,0 +1,110 @@
+<apex:page >
+    <script>
+	    // TODO Catch the event and filter our twitter feeds
+		window.addEventListener("message", function (event) {
+           
+            // Validate
+            if (event.data.type !== "TvShowsOnly") {
+                return;
+            }
+            
+            var name = event.data.name;
+            filterAllFeeds(name);
+        });
+    
+    
+    
+    
+    
+ 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        // Select all feeds, and apply the filter
+        function filterAllFeeds(name) {
+            document.querySelectorAll('.twitter-feed').forEach(filterFeed.bind(null, name)); 
+        }
+                                
+		function filterFeed(name, element) {
+            // Hide feed if it doesn't match the selection
+            let hideTweet = name !== "all" && name !== element.dataset.filterName;
+            
+            // Apply the CSS class to hide the feed
+            element.classList.toggle('hide-tweet', hideTweet);
+        }
+    
+    	function backToContact() {
+            //window.location = '/003B00000071qibIAA';
+            sforce.one.navigateToURL('/003B00000071qibIAA');
+        }
+    </script>
+    <script src="//platform.twitter.com/widgets.js" />
+    
+    <style>
+        .twitter-feed {
+            display:inline-block;
+        }
+        .hide-tweet {
+            -webkit-transition: opacity 1s ease-in-out;
+            -moz-transition: opacity 1s ease-in-out;
+            -ms-transition: opacity 1s ease-in-out;
+            -o-transition: opacity 1s ease-in-out;
+            opacity: 0;
+        }
+    </style>
+
+    
+    <div style="float:right;font-size:larger;margin-right:2em">
+        <a href="javascript:backToContact();">Back To Contact</a>
+    </div>
+    
+    <!--- Basic twitter timeline widgets --->
+    <div id="allTwitterFeeds">
+        <div class="twitter-feed" data-filter-name="fargo">
+            <a class="twitter-timeline" width="200" height="500" tweet-limit="5" href="https://twitter.com/FargoFX">
+                fargo
+            </a>
+        </div>
+        <div class="twitter-feed" data-filter-name="legion">
+            <a class="twitter-timeline" width="200" height="500" tweet-limit="5" href="https://twitter.com/legionfx">
+                legion
+            </a>
+        </div>
+        <div class="twitter-feed" data-filter-name="halt and catch fire">
+            <a class="twitter-timeline" width="200" height="500" tweet-limit="5" href="https://twitter.com/haltamc">
+                halt and catch fire
+            </a>
+        </div>
+        <div class="twitter-feed" data-filter-name="mr robot">
+            <a class="twitter-timeline" width="200" height="500" tweet-limit="5" href="https://twitter.com/whoismrrobot">
+                mr robot
+            </a>
+        </div>
+        <div class="twitter-feed" data-filter-name="the americans">
+            <a class="twitter-timeline" width="200" height="500" tweet-limit="5" href="https://twitter.com/TheAmericansFX">
+                the americans
+            </a>
+        </div>
+        <div class="twitter-feed" data-filter-name="seinfeld">
+            <a class="twitter-timeline" width="200" height="500" tweet-limit="5" href="https://twitter.com/seinfeldtoday">
+                seinfeld today
+            </a>
+        </div>
+        <div class="twitter-feed" data-filter-name="seinfeld">
+            <a class="twitter-timeline" width="200" height="500" tweet-limit="5" href="https://twitter.com/jerryseinfeld">
+                jerry seinfeld
+            </a>
+        </div>
+        <div class="twitter-feed" data-filter-name="game of thrones">
+            <a class="twitter-timeline" width="200" height="500" tweet-limit="5" href="https://twitter.com/GameOfThrones">
+                game of thrones
+            </a>
+        </div>
+    </div>
+</apex:page>

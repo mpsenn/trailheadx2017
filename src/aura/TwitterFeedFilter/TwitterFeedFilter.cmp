@@ -1,0 +1,26 @@
+<aura:component implements="force:lightningQuickAction,force:hasRecordId,force:appHostable,flexipage:availableForAllPageTypes" access="global">
+	
+    <aura:attribute name="vfHost" type="String" default="tahir--ftplatform.gus.visual.force.com" />
+    <aura:attribute name="vfPage" type="String" default="TwitterFeedAggregator" />
+
+    <fieldset class="slds-form-element">
+ 		<div class="slds-form-element__control">
+            <div class="slds-radio_button-group">
+                <c:RadioButton change="{!c.onChange}" id="all" name="tvshows" label="All" checked="true" />
+                <c:RadioButton change="{!c.onChange}" id="fargo" name="tvshows" label="Fargo" />
+                <c:RadioButton change="{!c.onChange}" id="legion" name="tvshows" label="Legion" />
+                <c:RadioButton change="{!c.onChange}" id="halt and catch fire" name="tvshows" label="Halt and Catch Fire" />
+                <c:RadioButton change="{!c.onChange}" id="mr robot" name="tvshows" label="Mr. Robot" />
+                <c:RadioButton change="{!c.onChange}" id="the americans" name="tvshows" label="The Americans" />
+                <c:RadioButton change="{!c.onChange}" id="seinfeld" name="tvshows" label="Seinfeld" />
+                <c:RadioButton change="{!c.onChange}" id="game of thrones" name="tvshows" label="Game of Thrones" />
+            </div>
+        </div>
+    </fieldset>
+
+    <div>
+    	<iframe aura:id="vfFrame" src="{! 'https://' + v.vfHost + '/apex/' + v.vfPage + '?isdtp=p1'}"
+           		height="1000" width="100%" frameborder="0"/>
+    </div>
+
+</aura:component>

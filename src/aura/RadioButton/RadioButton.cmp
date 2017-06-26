@@ -1,0 +1,15 @@
+<aura:component >
+    
+    <aura:attribute name="id" type="String" />
+    <aura:attribute name="name" type="String" description="Group name" />
+    <aura:attribute name="label" type="String" />
+    <aura:attribute name="checked" type="boolean" default="false" />
+    <aura:registerEvent name="change" type="RadioButtonChange" />
+    
+	<span class="slds-button slds-radio_button">
+        <input type="radio" name="{!v.name}" id="{!v.id}" onclick="{!c.onClick}"/>
+        <label class="slds-radio_button__label" for="{!v.id}">
+          <span class="slds-radio_faux">{!v.label}</span>
+        </label>
+    </span>
+</aura:component>
