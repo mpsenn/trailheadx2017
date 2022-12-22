@@ -10,6 +10,7 @@ Presented by Mike Senn and Alexander Dale, this TrailheaDX session covered sever
 
 ## Links
 
+* [Video recording](https://www.youtube.com/watch?v=dbpFrzdLYCo)
 * [Session code and slides](https://github.com/mpsenn/trailheadx2017)
 * [Communicating between Lightning Components and Visualforce Pages](https://developer.salesforce.com/blogs/developer-relations/2017/01/lightning-visualforce-communication.html)
 * [Visualforce & Lightning Experience Trailhead Module](https://trailhead.salesforce.com/modules/lex_dev_visualforce)
